@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre: Julio
+  dni: 45897589
+  capitulo_id: 980190962
+
+two:
+  nombre: Karina
+  dni: 58963265
+  capitulo_id: 980190962

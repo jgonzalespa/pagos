@@ -1,0 +1,15 @@
+current directory: /home/julio/2023-2/contruccion/unidad3/App1/vendor/bundle/ruby/2.7.0/gems/stringio-3.1.0/ext/stringio
+/usr/bin/ruby2.7 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20240129-3660-1bfl6tm.rb extconf.rb
+creating Makefile
+
+current directory: /home/julio/2023-2/contruccion/unidad3/App1/vendor/bundle/ruby/2.7.0/gems/stringio-3.1.0/ext/stringio
+make DESTDIR\= clean
+
+current directory: /home/julio/2023-2/contruccion/unidad3/App1/vendor/bundle/ruby/2.7.0/gems/stringio-3.1.0/ext/stringio
+make DESTDIR\=
+compiling stringio.c
+linking shared-object stringio.so
+
+current directory: /home/julio/2023-2/contruccion/unidad3/App1/vendor/bundle/ruby/2.7.0/gems/stringio-3.1.0/ext/stringio
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 stringio.so ./.gem.20240129-3660-w2m5a1

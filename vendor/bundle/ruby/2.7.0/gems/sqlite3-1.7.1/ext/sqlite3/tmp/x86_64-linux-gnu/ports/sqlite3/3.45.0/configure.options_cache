@@ -1,0 +1,1 @@
+["--host=x86_64-linux-gnu", "--enable-static", "--disable-shared", "--enable-shared=no", "--enable-static=yes", "--enable-fts5", "CC=x86_64-linux-gnu-gcc", "CFLAGS=-fPIC -O2 -fvisibility=hidden -DSQLITE_DEFAULT_WAL_SYNCHRONOUS=1", "--prefix=/home/julio/2023-2/contruccion/unidad3/App1/vendor/bundle/ruby/2.7.0/gems/sqlite3-1.7.1/ports/x86_64-linux-gnu/sqlite3/3.45.0"]

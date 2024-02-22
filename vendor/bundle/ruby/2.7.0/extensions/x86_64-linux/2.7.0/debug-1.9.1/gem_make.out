@@ -1,0 +1,16 @@
+current directory: /home/julio/2023-2/contruccion/unidad3/App1/vendor/bundle/ruby/2.7.0/gems/debug-1.9.1/ext/debug
+/usr/bin/ruby2.7 -I /usr/lib/ruby/vendor_ruby -r ./siteconf20240129-3660-142albb.rb extconf.rb
+creating Makefile
+
+current directory: /home/julio/2023-2/contruccion/unidad3/App1/vendor/bundle/ruby/2.7.0/gems/debug-1.9.1/ext/debug
+make DESTDIR\= clean
+
+current directory: /home/julio/2023-2/contruccion/unidad3/App1/vendor/bundle/ruby/2.7.0/gems/debug-1.9.1/ext/debug
+make DESTDIR\=
+compiling debug.c
+compiling iseq_collector.c
+linking shared-object debug/debug.so
+
+current directory: /home/julio/2023-2/contruccion/unidad3/App1/vendor/bundle/ruby/2.7.0/gems/debug-1.9.1/ext/debug
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20240129-3660-17g4le/debug
