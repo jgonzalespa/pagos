@@ -1,15 +1,36 @@
 <%= form_with model: @persona, url: personas_path do |f|%>
-<div>
-    <%= f.label :nombre%>
-    <%= f.text_field :nombre%>
-</div>
-<div>
-    <%= f.label :dni%>
-    <%= f.text_field :dni%>
-</div>
-<div>
-<%= f.collection_select :capitulo_id, Capitulo.all.order(name: :asc), :id, :name%>
-</div>
-<br>
-<%= f.submit%>
+    <div>
+        <%= f.label :nombre%>
+        <%= f.text_field :nombre%>
+    </div>
+    <div>
+        <%= f.label :dni%>
+        <%= f.text_field :dni%>
+    </div>
+    <div>
+        <%= f.collection_select :capitulo_id, Capitulo.all.order(name: :asc), :id, :name%> 
+    </div>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>Fecha de Pago</th>
+                <th>Año</th>
+                <th>Mes</th>
+                <th>Cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%= f.fields_for :pagos do |pago|%>
+                <tr>
+                    <td><%= pago.date_field :fechapago, value: Date.today %></td>
+                    <td><%= pago.select :anio, (Time.zone.now.year-4)..(Time.zone.now.year+1) %></td>
+                    <td><%= pago.select :mes, 1..12, step: 1%></td>
+                    <td><%= pago.number_field :monto, in: 10.00..100.00, value: 50 %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+    <br>
+    <%= f.submit%>
 <% end %>

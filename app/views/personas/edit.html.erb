@@ -7,17 +7,38 @@
 </div>
 
 <%= form_with model: @persona, url: update_persona_path do |f|%>
-<div>
-    <%= f.label :nombre%>
-    <%= f.text_field :nombre%>
-</div>
-<div>
-    <%= f.label :dni%>
-    <%= f.text_field :dni%>
-</div>
-<div>
-<%= f.select(:capitulo_id, Capitulo.getCapitulos )%>
-</div>
-<br>
-<%= f.submit%>
+	<div>
+		<%= f.label :nombre%>
+		<%= f.text_field :nombre%>
+	</div>
+	<div>
+		<%= f.label :dni%>
+		<%= f.text_field :dni%>
+	</div>
+	<div>
+	<%= f.select(:capitulo_id, Capitulo.getCapitulos )%>
+	</div>
+	<br>
+		<table>
+			<thead>
+				<tr>
+					<th>Fecha de Pago</th>
+					<th>Año</th>
+					<th>Mes</th>
+					<th>Cantidad</th>
+				</tr>
+			</thead>
+			<tbody>
+				<%= f.fields_for :pagos do |pago|%>
+					<tr>
+						<td><%= pago.date_field :fechapago%></td>
+						<td><%= pago.select :anio, (Time.zone.now.year-4)..(Time.zone.now.year+1) %></td>
+						<td><%= pago.select :mes, 1..12 %></td>
+						<td><%= pago.number_field :monto, in: 0.00..1000.00%></td>
+					</tr>
+				<%end%>
+			</tbody>
+		</table>
+	<br>
+	<%= f.submit%>
 <% end %>

@@ -1,0 +1,37 @@
+<%= form_with(model: pago) do |form| %>
+  <% if pago.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(pago.errors.count, "error") %> prohibited this pago from being saved:</h2>
+
+      <ul>
+        <% pago.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :fechapago, style: "display: block" %>
+    <%= form.datetime_field :fechapago %>
+  </div>
+
+  <div>
+    <%= form.label :anio, style: "display: block" %>
+    <%= form.number_field :anio %>
+  </div>
+
+  <div>
+    <%= form.label :mes, style: "display: block" %>
+    <%= form.number_field :mes %>
+  </div>
+
+  <div>
+    <%= form.label :monto, style: "display: block" %>
+    <%= form.text_field :monto %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -10,6 +10,7 @@ class PersonasController < ApplicationController
 
     def edit
         @persona = Persona.find(params[:id])
+        @persona.pagos.build
     end
 
     def update
@@ -31,9 +32,8 @@ class PersonasController < ApplicationController
 
 
     def create
-		@persona = Persona.new person_param
-
-		if @persona.save then
+		@persona = Persona.new person_param        
+        if @persona.save then
 			redirect_to personas_path, notice: "Registro guardado correctamente!"
 		else
 			render :new, status: :unprocessable_entity
@@ -42,14 +42,13 @@ class PersonasController < ApplicationController
 
     def new
         @persona = Persona.new
+        @persona.pagos.build
 		@url = personas_path
     end
 
-
-
     private
     def person_param
-        params.require(:persona).permit(:nombre, :dni, :capitulo_id)
+        params.require(:persona).permit(:nombre, :dni, :capitulo_id, pagos_attributes:[:id, :fechapago, :anio, :mes, :monto])
     end
 
  

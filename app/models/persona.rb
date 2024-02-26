@@ -1,5 +1,9 @@
 class Persona < ApplicationRecord
     belongs_to :capitulo
+    has_many :pagos, dependent: :destroy
+
+    accepts_nested_attributes_for :pagos,
+        reject_if: proc{|attr|attr['fechapago'].blank? or attr['monto'].blank?}
 
     # devuelve el nombre de un capitulo por su id
     def self.capituloName(capitulo_id)
