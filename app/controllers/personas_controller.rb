@@ -48,7 +48,7 @@ class PersonasController < ApplicationController
 
     private
     def person_param
-        params.require(:persona).permit(:nombre, :dni, :capitulo_id, pagos_attributes:[:id, :fechapago, :anio, :mes, :monto])
+        params.require(:persona).permit(:nombre, :dni, :capitulo_id, :photo, pagos_attributes:[:id, :fechapago, :anio, :mes, :monto])
     end
 
  

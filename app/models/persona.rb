@@ -1,6 +1,8 @@
 class Persona < ApplicationRecord
+    has_one_attached :photo
     belongs_to :capitulo
     has_many :pagos, dependent: :destroy
+    
 
     accepts_nested_attributes_for :pagos,
         reject_if: proc{|attr|attr['fechapago'].blank? or attr['monto'].blank?}

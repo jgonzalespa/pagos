@@ -18,6 +18,12 @@
 	<div>
 	<%= f.select(:capitulo_id, Capitulo.getCapitulos )%>
 	</div>
+	<div>
+	<%= f.file_field :photo %>
+	</div>
+	<div>
+	<%= image_tag @persona.photo, width: 200 if @persona.photo.attached? %>
+	</div>
 	<br>
 		<table>
 			<thead>
